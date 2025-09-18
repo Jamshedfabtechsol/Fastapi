@@ -8,7 +8,7 @@ class ChatRequest(BaseModel):
     key: str
     query: str
 
-@router.post("/chat")
+@router.post("/chatbot")
 def ask_chatbot(chat: ChatRequest):
     response = main(chat.key, query=chat.query)
     return {"response": response}
